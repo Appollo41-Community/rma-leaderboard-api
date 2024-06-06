@@ -1,0 +1,1 @@
+rootProject.name = "rma24-leaderboard-api"
