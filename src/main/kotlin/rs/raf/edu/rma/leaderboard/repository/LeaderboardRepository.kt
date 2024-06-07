@@ -9,6 +9,8 @@ class LeaderboardRepository(
     val leaderboardDataStore: LeaderboardDataStore,
 ) {
 
+    fun getLeaderboard() = leaderboardDataStore.data.value
+
     private fun Leaderboard.getSortedByDescendingResults(category: QuizCategory): List<QuizResult> {
         val result = when (category) {
             QuizCategory.GuessTheFact -> this.guessTheFactResults

@@ -61,6 +61,11 @@ fun Route.leaderboardRouting(path: String) = route(path) {
         leaderboardRepository.deleteAllQuizResults(category)
         call.respond(HttpStatusCode.NoContent)
     }
+
+    get("admin") {
+        val leaderboard = leaderboardRepository.getLeaderboard()
+        call.respond(leaderboard)
+    }
 }
 
 private fun RequestValidationConfig.validateCreateQuizResultRequest() {
